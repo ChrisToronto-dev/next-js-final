@@ -1,0 +1,15 @@
+.nav {
+}
+
+.nav ul {
+  display: flex;
+  justify-content: space-between;
+  padding: 30px;
+  border: 1px solid black;
+  border-radius: 10px;
+  font-size: 35px;
+}
+
+.nav ul .active {
+  text-decoration: underline;
+}

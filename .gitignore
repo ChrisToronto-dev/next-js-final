@@ -1,0 +1,30 @@
+# General
+.DS_Store
+.env
+.env.local
+.env.development.local
+.env.test.local
+.env.production.local
+node_modules
+out
+build
+.next
+package-lock.json
+yarn.lock
+pnpm-lock.yaml
+
+# Logs and temp files
+*.log
+*.temp
+*.swp
+*.swo
+.vscode/settings.json
+.vscode/extensions.json
+.idea
+
+# Optional: If using a static site generator alongside Next.js (e.g., for a /static directory)
+/static
+
+# Optional: If you have build artifacts you want to ignore
+/public/build
+/public/_next
