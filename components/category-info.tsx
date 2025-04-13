@@ -11,22 +11,27 @@ export default async function BookInfo({ id }: { id: string }) {
   console.log(category);
   return (
     <div className={styles.category_box}>
-      {category.results.books.map((book) => (
-        <div key={book.primary_isbn13} className={styles.category_item}>
-          <img src={book.book_image} />
-          <div className={styles.cateogry_desc}>
-            <h2>{book.title}</h2>
-            <h3>{book.author}</h3>
-            <a
-              href={book.amazon_product_url}
-              className={styles.buy_btn}
-              target="_blank"
-            >
-              Buy Now
-            </a>
+      {category.results.books.map((book) =>
+        book.book_image ? (
+          <div key={book.primary_isbn13} className={styles.category_item}>
+            <img src={book.book_image} />
+
+            <div className={styles.cateogry_desc}>
+              <h2>{book.title}</h2>
+              <h3>{book.author}</h3>
+              <a
+                href={book.amazon_product_url}
+                className={styles.buy_btn}
+                target="_blank"
+              >
+                Buy Now
+              </a>
+            </div>
           </div>
-        </div>
-      ))}
+        ) : (
+          ""
+        )
+      )}
     </div>
   );
 }
