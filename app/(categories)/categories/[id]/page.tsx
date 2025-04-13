@@ -1,6 +1,6 @@
 import { Suspense } from "react";
 import BookInfo from "../../../../components/category-info";
-import { API_URL } from "../../../(home)/page";
+import { API_URL } from "../../../constants";
 import styles from "../../../styles/category.module.css";
 import { PageProps } from "next";
 
