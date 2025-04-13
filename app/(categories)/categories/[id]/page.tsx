@@ -2,11 +2,17 @@ import { Suspense } from "react";
 import BookInfo from "../../../../components/category-info";
 import { API_URL } from "../../../constants";
 import styles from "../../../styles/category.module.css";
-import { PageProps } from "next";
+import PageProps from "next";
 
 export const metadata = {
   title: "Category | Next.js",
 };
+
+interface Props {
+  params: {
+    id: string;
+  };
+}
 
 async function getCategory(id: string) {
   const response = await fetch(`${API_URL}/list?name=${id}`);
@@ -14,9 +20,7 @@ async function getCategory(id: string) {
   return json;
 }
 
-export default async function CategoryDetail({
-  params,
-}: PageProps<{ id: string }>) {
+export default async function CategoryDetail({ params }: Props) {
   const id = params.id;
   const categoryTitle = await getCategory(id);
 
